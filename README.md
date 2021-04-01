@@ -7,6 +7,9 @@ Most of the available help on the internet is targetted towards Nano operators.
 There is not a lot of help for a software engineer/developer/programmer who wants to work with Nano.
 This project is primarily for myself and also to help others who will follow after me.
 
+IMPORTANT NOTE:
+This project mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. So that parallel projects are possible. 
+
 After spending a couple of days with Nano, my biggest problems were:
 * It was a little confusing how to build the system. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies.
 * There is no "hello world" like practice programs, it would be nice to introduce some trivial tools to play with and get some immediate feedback and leanring opportunities for newbies.
@@ -15,6 +18,7 @@ After spending a couple of days with Nano, my biggest problems were:
 * It is not easy to answer the question "is my node synced"?
 * It is difficult to bootstrap the node (TODO: define bootstraping)
 * It is not obvious how to circumvent bootstraping for a faster sync-up
+* It is not obvious how to setup a nano node locally within a disk directory (and hence allow for multiple parallel builds).
 
 This project will try to provide solutions to the issues listed above.
 The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
@@ -41,3 +45,24 @@ TODO: I'll fill this in when I find out what it is :-)
 ## Nano glossary
 The Nano glossary can be found here:
 https://docs.nano.org/glossary
+
+# Building Nano from scratch
+This projects consists of a Makefile in the root folder.
+The purpose of that makefile is to build nano_node and its dependencies.
+
+Currently it does the following:
+* downloads and builds the boost library.
+* git clones the nano-node project and its subprojects
+* builds nano-node
+
+To do all the above, type 'make' to execute the deafult makefile target.
+
+There are some other targets in the makefile for convenience:
+
+## make get_ledger
+Download the latest ledger from: https://mynano.ninja/api/ledger/download
+It can be used to bootstrap a virgin node quickly without going through the extremely slow bootstrap process that takes days to complete usually.
+NOTE: this step is totally insecure and shoudl only be used by people who do not deal with real coins or only risk small amounts of Nano.
+
+## make run_node
+Run the nano node program with mostly default arguments. Use the folder 'data' to store the ledger data.
