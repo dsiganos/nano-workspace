@@ -48,8 +48,8 @@ nano-node/nano_node: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
 # download a copy of the latest ledger
 # SECURITY RISK: this step is not secure and not recomended for proper nodes
 get_ledger:
-	wget https://mynano.ninja/api/ledger/download -O data.ldb
 	wget https://mynano.ninja/api/ledger/checksum/sha256 -O data.ldb.sha256
+	wget https://mynano.ninja/api/ledger/download -O data.ldb
 
 # run nano node using a local data directory
 run_node:
