@@ -43,7 +43,7 @@ Initially, there is a large number of unchecked blocks and only one checked bloc
 TODO: I'll fill this in when I find out what it is :-)
 
 ## Nano glossary
-The Nano glossary can be found here:
+The Nano glossary can be found here:  
 https://docs.nano.org/glossary
 
 # Building Nano from scratch
@@ -61,7 +61,9 @@ There are some other targets in the makefile for convenience:
 
 ## make get_ledger
 Download the latest ledger from: https://mynano.ninja/api/ledger/download
+
 It can be used to bootstrap a virgin node quickly without going through the extremely slow bootstrap process that takes days to complete usually.
+
 NOTE: this step is totally insecure and shoudl only be used by people who do not deal with real coins or only risk small amounts of Nano.
 
 ## make run_node
