@@ -11,7 +11,7 @@ IMPORTANT NOTE:
 This project mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. So that parallel projects are possible. 
 
 After spending a couple of days with Nano, my biggest problems were:
-* It was a little confusing how to build the system. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies.
+* It was a little confusing how to build the system. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies. (https://docs.nano.org/integration-guides/build-options)
 * There is no "hello world" like practice programs, it would be nice to introduce some trivial tools to play with and get some immediate feedback and leanring opportunities for newbies.
 * Running a node gives very little feedback that makes any sense to a newbie, it would be nice to have a newbie mode with easy feedback and a page to explain the terminology used by the nano node logs.
 * It is not easy to answer the question "is my node running well"?
