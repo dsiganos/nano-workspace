@@ -19,7 +19,7 @@ After spending a couple of days with Nano, my biggest problems were:
 This project will try to provide solutions to the issues listed above.
 The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
 
-# Terminology
+# Quick Terminology
 
 ## Representative
 A representative is a voting peer as defined in the Nano whitepaper.
@@ -37,3 +37,7 @@ Initially, there is a large number of unchecked blocks and only one checked bloc
 
 ## Cemented
 TODO: I'll fill this in when I find out what it is :-)
+
+## Nano glossary
+The Nano glossary can be found here:
+https://docs.nano.org/glossary
