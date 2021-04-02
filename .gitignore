@@ -2,4 +2,6 @@
 /boost_1_69_0
 /git.clone.done
 /nano-node
+/data.ldb
+/data.ldb.sha256
 *.swp
