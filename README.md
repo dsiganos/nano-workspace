@@ -68,3 +68,8 @@ NOTE: this step is totally insecure and shoudl only be used by people who do not
 
 ## make run_node
 Run the nano node program with mostly default arguments. Use the folder 'data' to store the ledger data.
+
+# Running the node
+To start the node run 'make run_node'.
+To stop the node, use the RPC script stop.sh in folder rpc/curl.
+To get the block_count, use the script block_count.sh in folder rpc/curl.
