@@ -73,3 +73,8 @@ Run the nano node program with mostly default arguments. Use the folder 'data' t
 To start the node run 'make run_node'.
 To stop the node, use the RPC script stop.sh in folder rpc/curl.
 To get the block_count, use the script block_count.sh in folder rpc/curl.
+
+# Useful links
+* https://docs.nano.org/node-implementation/contributing
+* https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
+* https://docs.nano.org/integration-guides/build-options
