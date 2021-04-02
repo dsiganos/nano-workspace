@@ -17,7 +17,7 @@ After spending a couple of days with Nano, my biggest problems were:
 * It is not easy to answer the question "is my node running well"?
 * It is not easy to answer the question "is my node synced"?
 * It is difficult to bootstrap the node (TODO: define bootstraping)
-* It is not obvious how to circumvent bootstraping for a faster sync-up
+* It is not obvious how to circumvent bootstraping for a faster sync-up (https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files)
 * It is not obvious how to setup a nano node locally within a disk directory (and hence allow for multiple parallel builds).
 
 This project will try to provide solutions to the issues listed above.
