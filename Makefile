@@ -51,6 +51,11 @@ get_ledger:
 	wget https://mynano.ninja/api/ledger/checksum/sha256 -O data.ldb.sha256
 	wget https://mynano.ninja/api/ledger/download -O data.ldb
 
+# force the downloaded ledger into nano-node/data/data.ldb
+# using a hardlink for efficiency
+force_ledger:
+	ln -f data.ldb nano-node/data/data.ldb
+
 # run nano node using a local data directory
 run_node:
 	cd nano-node && ./nano_node --daemon --config rpc.enable=true --data_path data
