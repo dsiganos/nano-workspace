@@ -77,8 +77,8 @@ To get the block_count, use the script block_count.sh in folder rpc/curl.
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
+* https://docs.nano.org/integration-guides/build-options
 
 # TODO
 * Learn about the best network (https://docs.nano.org/running-a-node/beta-network)
 * Learn about the test network (https://docs.nano.org/running-a-node/test-network)
-* https://docs.nano.org/integration-guides/build-options
