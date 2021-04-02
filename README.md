@@ -80,5 +80,5 @@ To get the block_count, use the script block_count.sh in folder rpc/curl.
 * https://docs.nano.org/integration-guides/build-options
 
 # TODO
-* Learn about the best network (https://docs.nano.org/running-a-node/beta-network)
+* Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
 * Learn about the test network (https://docs.nano.org/running-a-node/test-network)
