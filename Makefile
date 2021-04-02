@@ -45,16 +45,18 @@ nano-node/nano_node: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
 	cd nano-node && $(MAKE) -j$(PARALLELISM) nano_node
 	cd nano-node && ./nano_node --diagnostics
 
-# download a copy of the latest ledger
+# download a copy of the latest ledger and check the hash then inflate it
 # SECURITY RISK: this step is not secure and not recomended for proper nodes
 get_ledger:
-	wget https://mynano.ninja/api/ledger/checksum/sha256 -O data.ldb.sha256
-	wget https://mynano.ninja/api/ledger/download -O data.ldb
+	mkdir -p ledgercache
+	cd ledgercache && wget https://mynano.ninja/api/ledger/checksum/sha256 -O data.ldb.sha256
+	cd ledgercache && wget -O data.ldb.7z https://mynano.ninja/api/ledger/download
+	cd ledgercache && echo `cat data.ldb.sha256` data.ldb.7z | sha256sum --check
+	cd ledgercache && 7z x data.ldb.7z
 
 # force the downloaded ledger into nano-node/data/data.ldb
-# using a hardlink for efficiency
 force_ledger:
-	ln -f data.ldb nano-node/data/data.ldb
+	cp ledgercache/data.ldb nano-node/data/data.ldb
 
 # run nano node using a local data directory
 run_node:

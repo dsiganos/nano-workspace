@@ -4,4 +4,5 @@
 /nano-node
 /data.ldb
 /data.ldb.sha256
+/ledgercache
 *.swp
