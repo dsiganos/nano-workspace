@@ -68,6 +68,18 @@ To start the node run 'make run_node'.
 To stop the node, use the RPC script stop.sh in folder rpc/curl.  
 To get the block_count, use the script block_count.sh in folder rpc/curl.
 
+# Downloading a ledger and jump-starting nano node
+If you start a nano node from scratch, it will take many days to catch up with the network and there is a chance the it will get stuck after many days of effort. It is not practical to wait that long. The solution is to jump start the nano node. We do that by downloading an already populated ledger database file.
+One can be got from <https://mynano.ninja/api/ledger/checksum/sha256>.
+The [Makefile](Makefile) automates the process of downloading and installing the ledger.
+To install the latest ledger, run the commands but first ensure that nano_node is not running:
+```
+rpc/curl/stop.sh
+<wait until nano_node is stopped>
+make get_ledger
+make force_ledger
+```
+
 # RPC
 The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.  
 Requests and responses are in the form of json over HTTP.  
