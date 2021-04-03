@@ -79,6 +79,7 @@ rpc/curl/stop.sh
 make get_ledger
 make force_ledger
 ```
+More details about ledger management can be found [here](https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files).
 
 # RPC
 The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.  
