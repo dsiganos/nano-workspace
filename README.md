@@ -74,7 +74,7 @@ Requests and responses are in the form of json over HTTP.
 A raw TCP dump of a simple request/response can be seen [here](examples/captures/block_count_req_resp.txt).
 
 A number of trivial but useful scripts are in the [rpc](rpc) folder.
-There are scripts written using the shell scripting and curl and also python scripts.
+There are scripts written using shell scripting and curl in the [curl](rpc/curl) folder and also python scripts in the [python](rpc/python) folder.
 The script [block_count.py](rpc/python/block_count.py) is a trivial script that shows how to do a trivial RPC.
 The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count.py and showing how to manipulate the data returned.
 
