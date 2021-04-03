@@ -8,7 +8,7 @@ There is not a lot of help for a software engineer/developer/programmer who want
 This project is primarily for myself and also to help others who will follow after me.
 
 IMPORTANT NOTE:
-This project mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. So that parallel projects are possible. 
+This project mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. Having everything local allows for parallel projects on one computer. 
 
 After spending a couple of days with Nano, my biggest problems were:
 * It was a little confusing how to build the system. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies. (https://docs.nano.org/integration-guides/build-options)
