@@ -22,7 +22,7 @@ After spending a couple of days with Nano, my biggest problems were:
 
 This project will try to provide solutions to the issues listed above.
 The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
-
+block_count_req_resp.txt
 # Quick Terminology
 | Term                 | Explanation   |
 | -------------        | ------------- |
@@ -71,7 +71,7 @@ To get the block_count, use the script block_count.sh in folder rpc/curl.
 # RPC
 The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.  
 Requests and responses are in the form of json over HTTP.  
-A raw TCP dump of a simple request/response can be seen [here](examples/captures/block_count_req_resp.txt)
+A raw TCP dump of a simple request/response can be seen [here](examples/captures/block_count_req_resp.txt).
 
 A number of trivial but useful scripts are in the [rpc](rpc) folder.
 There are scripts written using the shell scripting and curl and also python scripts.
