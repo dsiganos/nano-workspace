@@ -68,6 +68,11 @@ To start the node run 'make run_node'.
 To stop the node, use the RPC script stop.sh in folder rpc/curl.
 To get the block_count, use the script block_count.sh in folder rpc/curl.
 
+# RPC
+The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.
+Requests and responses are in the form of json over HTTP.
+A raw TCP dump of a simple request/response can be seen [here](examples/captures/block_count_req_resp.txt)
+
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
