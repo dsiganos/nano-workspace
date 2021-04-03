@@ -1,0 +1,25 @@
+POST / HTTP/1.1
+Host: [::1]:7076
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json
+
+{"action": "block_count"}
+
+HTTP/1.1 200 OK
+Allow: POST, OPTIONS
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, OPTIONS
+Access-Control-Allow-Headers: Accept, Accept-Language, Content-Language, Content-Type
+Connection: close
+Content-Length: 83
+
+{
+    "count": "118512292",
+    "unchecked": "6627",
+    "cemented": "100590664"
+}
