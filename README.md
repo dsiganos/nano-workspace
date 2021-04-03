@@ -78,6 +78,9 @@ There are scripts written using the shell scripting and curl and also python scr
 The script [block_count.py](rpc/python/block_count.py) is a trivial script that shows how to do a trivial RPC.
 The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count.py and showing how to manipulate the data returned.
 
+# Creating a wallet
+TODO
+
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
