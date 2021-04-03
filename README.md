@@ -64,13 +64,13 @@ Force copy the downloaded ledger into the data folder (this will overwrite the e
 Run the nano node program with mostly default arguments. Use the folder 'data' to store the ledger data.
 
 # Running the node
-To start the node run 'make run_node'.
-To stop the node, use the RPC script stop.sh in folder rpc/curl.
+To start the node run 'make run_node'.  
+To stop the node, use the RPC script stop.sh in folder rpc/curl.  
 To get the block_count, use the script block_count.sh in folder rpc/curl.
 
 # RPC
-The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.
-Requests and responses are in the form of json over HTTP.
+The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.  
+Requests and responses are in the form of json over HTTP.  
 A raw TCP dump of a simple request/response can be seen [here](examples/captures/block_count_req_resp.txt)
 
 # Useful links
