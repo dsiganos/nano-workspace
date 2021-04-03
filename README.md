@@ -37,15 +37,15 @@ There is an official Nano glossary and it can be found here:
 https://docs.nano.org/glossary
 
 # Building Nano from scratch
-This projects consists of a Makefile in the root folder.
+This project consists of a Makefile in the root folder.
 The purpose of that makefile is to build nano_node and its dependencies.
 
 Currently it does the following:
-* downloads and builds the boost library.
+* downloads and builds the boost library
 * git clones the nano-node project and its subprojects
 * builds nano-node
 
-To do all the above, type 'make' to execute the deafult makefile target.
+To do all the above, type 'make' to execute the default makefile target.
 
 There are some other targets in the makefile for convenience:
 
@@ -55,6 +55,10 @@ Download the latest ledger from: https://mynano.ninja/api/ledger/download
 It can be used to bootstrap a virgin node quickly without going through the extremely slow bootstrap process that takes days to complete usually.
 
 NOTE: this step is totally insecure and shoudl only be used by people who do not deal with real coins or only risk small amounts of Nano.
+
+## make force_ledger
+
+Force copy the downloaded ledger into the data folder (this will overwrite the exisitng ledger in the data folder).
 
 ## make run_node
 Run the nano node program with mostly default arguments. Use the folder 'data' to store the ledger data.
