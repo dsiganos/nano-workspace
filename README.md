@@ -2,27 +2,27 @@
 A workspace for Nano coin development
 
 # Introduction
-This project is targetted for the newbie Nano developer.
-Most of the available help on the internet is targetted towards Nano operators.
-There is not a lot of help for a software engineer/developer/programmer who wants to work with Nano.
-This project is primarily for myself and also to help others who will follow after me.
+This project is targetted for the newbie Nano developer. Most of the available help on the internet is targetted towards Nano operators and there is not a lot of help for a software engineer/developer who wants to work inside Nano node. This project is primarily for myself, to document my journey with Nano, and also to help others who follow on a similar path.
+
+Think of this project as a guide to Nano development from a nano node software engineer's perpective (C++ perspective) as opposed to a software engineer that plans to integrate other software with nano node (RPC perspective).
+
+This project is work in progress.
 
 IMPORTANT NOTE:
-This project mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. Having everything local allows for parallel projects on one computer. 
+This project initially mostly ignores security and is focused on getting a node up and running as quickly and as easily as possible whilst building everything from scratch and everything installed locally within the nano-workspace folder. Having everything local allows for parallel projects on one computer. This project is focused on learning the software architecture of nano node and not on operational issues such as operational security.
 
 After spending a couple of days with Nano, my biggest problems were:
-* It was a little confusing how to build the system. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies. (https://docs.nano.org/integration-guides/build-options)
-* There is no "hello world" like practice programs, it would be nice to introduce some trivial tools to play with and get some immediate feedback and leanring opportunities for newbies.
-* Running a node gives very little feedback that makes any sense to a newbie, it would be nice to have a newbie mode with easy feedback and a page to explain the terminology used by the nano node logs.
+* It was a little confusing how to build the system, it took me a few hours to find my bearings. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies (<https://docs.nano.org/integration-guides/build-options>). This project documents and automates the building of nano node with mostly default options.
+* There is no "hello world" like practice programs, it would be nice to introduce some trivial tools to play with and get some immediate feedback and leanring opportunities for newbies. This project aims to create a set of hello-world like programs for experiementation and learning.
+* Running a node gives very little feedback that makes any sense to a newbie, it would be nice to have a newbie mode with easy feedback and a page to explain the terminology used by the nano node logs. 
 * It is not easy to answer the question "is my node running well"?
 * It is not easy to answer the question "is my node synced"?
 * It is difficult to bootstrap the node (TODO: define bootstraping)
-* It is not obvious how to circumvent bootstraping for a faster sync-up (https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files)
-* It is not obvious how to setup a nano node locally within a disk directory (and hence allow for multiple parallel builds).
+* It is not obvious how to circumvent bootstraping for a faster sync-up (https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files).
+* It is not obvious how to setup a nano node locally within a disk directory so that all the relevant data is within a well-defined space and easy to find and track. Having all the data locally also allows for multiple parallel builds.
 
-This project will try to provide solutions to the issues listed above.
-The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
-block_count_req_resp.txt
+This project will try to provide solutions to the issues listed above. The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
+
 # Quick Terminology
 | Term                 | Explanation   |
 | -------------        | ------------- |
