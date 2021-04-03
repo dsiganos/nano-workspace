@@ -24,26 +24,16 @@ This project will try to provide solutions to the issues listed above.
 The target audience is linux developers who are comfortable with makefiles. I currently run Ubuntu 20.04.
 
 # Quick Terminology
+| Term                 | Explanation   |
+| -------------        | ------------- |
+| Representative       | A representative is a voting peer as defined in the Nano whitepaper. |
+| Frontier             | A frontier is the last block of a blockchain. | 
+| Count (block_count)  | Block count is the number of checked blocked. Checked blocked are blocked that have been verified and are trusted. In a virgin system the block count start at 1. There is one block that is trusted, the genesis block. |
+|  Unchecked           | Blocks that have been received but have not been checked yet. Initially, there is a large number of unchecked blocks and only one checked block because blocks cannot be checked until there is a chain of blocks that can lead to the genesis block, the only trusted block at the beggining. |
+| Cemented             | TODO: I'll fill this in when I find out what it is :-) |
 
-## Representative
-A representative is a voting peer as defined in the Nano whitepaper.
-
-## Frontier
-A frontier is the last block of a blockchain.
-
-## Count (block count)
-Block count is the number of checked blocked. Checked blocked are blocked that have been verified and are trusted.
-In a virgin system the block count start at 1. There is one block that is trusted, the genesis block.
-
-## Unchecked
-Blocks that have been received but have not been checked yet.
-Initially, there is a large number of unchecked blocks and only one checked block because blocks cannot be checked until there is a chain of blocks that can lead to the genesis block, the only trusted block at the beggining.
-
-## Cemented
-TODO: I'll fill this in when I find out what it is :-)
-
-## Nano glossary
-The Nano glossary can be found here:  
+Nano glossary:  
+There is an official Nano glossary and it can be found here:  
 https://docs.nano.org/glossary
 
 # Building Nano from scratch
