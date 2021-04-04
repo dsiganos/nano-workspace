@@ -47,7 +47,7 @@ Currently it does the following:
 
 To do all the above, type 'make' to execute the default makefile target.
 
-There are some other targets in the makefile for convenience:
+There are some other targets in the makefile for convenience and documentation purposes:
 
 ## make get_ledger
 Download the latest ledger from: https://mynano.ninja/api/ledger/download
@@ -58,15 +58,16 @@ NOTE: this step is totally insecure and shoudl only be used by people who do not
 
 ## make force_ledger
 
-Force copy the downloaded ledger into the data folder (this will overwrite the exisitng ledger in the data folder).
+Force copy the downloaded ledger into the nano-node/data folder (this will overwrite the exisitng ledger in the data folder).
 
 ## make run_node
-Run the nano node program with mostly default arguments. Use the folder 'data' to store the ledger data.
+Run the nano node program with mostly default arguments. Use the folder 'data', inside nano-node, to store the ledger.
 
 # Running the node
 To start the node run 'make run_node'.  
 To stop the node, use the RPC script stop.sh in folder rpc/curl.  
-To get the block_count, use the script block_count.sh in folder rpc/curl.
+To get the block_count, use the script block_count.sh in folder rpc/curl.  
+Nano node produces log output which can be found in nano-node/data/log folder.
 
 # Downloading a ledger and jump-starting nano node
 If you start a nano node from scratch, it will take many days to catch up with the network and there is a chance the it will get stuck after many days of effort. It is not practical to wait that long. The solution is to jump start the nano node. We do that by downloading an already populated ledger database file.
