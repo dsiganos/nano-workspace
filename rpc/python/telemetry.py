@@ -31,9 +31,10 @@ else:
 session = requests.Session()
 
 result = post(session, params)
-metrics = result['metrics']
 
 if args.max_block_count:
+    metrics = result['metrics']
+
     block_counts = [ int(x['block_count']) for x in metrics ]
 
     # sort metrics by block_count
