@@ -82,6 +82,19 @@ make force_ledger
 ```
 More details about ledger management can be found [here](https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files).
 
+# Node synced
+Once your node starts running, the first questions you are likely to have are:
+* is my node progressing?
+* is my node synced?
+
+You can check the progress of your node by check the block counts [block_count.py](rpc/python/block_count.py).  
+You want to see your counters increasing steadily.  
+You can also look at the log gile in the data directory.
+
+To check if your node is synced, is less straightforward because there is no authoritative way to say you are synced.  
+However, you can make a educated estimate according to your view of the network.  
+The script [is_synced.py](rpc/python/is_synced.py) shows one way of doing that.
+
 # RPC
 The nano node runs an HTTP server on http://[::1]:7076 and listens for incoming requests.  
 Requests and responses are in the form of json over HTTP.  
@@ -93,7 +106,11 @@ The script [block_count.py](rpc/python/block_count.py) is a trivial script that 
 The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count.py and showing how to manipulate the data returned.
 
 # Creating a wallet
-TODO
+Once you have a node up and running and synced, you will want to create a wallet.  
+A wallet is made of a wallet ID and a secret seed.  
+A wallet can hold up to 2 to the power 32 accounts.  
+The script [wallet_create.py](src/python/wallet_create.py) shows how to create wallets.  
+Wallets can be destroyed with [wallet_destroy.py](src/python/wallet_destroy.py)
 
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
