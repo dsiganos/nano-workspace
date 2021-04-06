@@ -67,4 +67,8 @@ run_node:
 tail_logs:
 	tail -f data/log/*
 
-.PHONY: force_ledger run_node tail_logs nano-build
+# rpc enable control
+enable_control:
+	echo "enable_control = true" > data/config-rpc.toml
+
+.PHONY: force_ledger run_node tail_logs nano-build enable_control
