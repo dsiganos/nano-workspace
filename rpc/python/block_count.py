@@ -10,3 +10,7 @@ resp = session.post('http://[::1]:7076', json=params, timeout=5)
 result = resp.json()
 
 print(json.dumps(result, indent=4))
+
+count = int(result['count'])
+cemented = int(result['cemented'])
+print('uncemented: %s' % (count - cemented))
