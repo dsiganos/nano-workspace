@@ -41,7 +41,7 @@ export BOOST_ROOT
 # build the nano node
 # TODO: this target should ideally split into smaller targets
 nano-node/nano_node: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
-	cd nano-node && cmake -G "Unix Makefiles"
+	cd nano-node && cmake -G "Unix Makefiles" -DNANO_TEST=ON .
 	cd nano-node && $(MAKE) -j$(PARALLELISM) nano_node
 	cd nano-node && ./nano_node --diagnostics
 
