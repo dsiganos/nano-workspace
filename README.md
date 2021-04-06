@@ -99,6 +99,7 @@ TODO
 * https://docs.nano.org/node-implementation/contributing
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
 * https://docs.nano.org/integration-guides/build-options
+* https://docs.nano.org/node-implementation/contributing/#wip-developer-starter-pack
 
 # TODO
 * Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
