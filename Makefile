@@ -9,7 +9,7 @@ PARALLELISM := 8
 
 NANO_BRANCH := V21.3
 
-default:  nano-node/nano_node
+default: nano-build
 
 # boost library download
 $(BOOST_FILENAME_NO_EXT).7z:
@@ -40,10 +40,11 @@ export BOOST_ROOT
 
 # build the nano node
 # TODO: this target should ideally split into smaller targets
-nano-node/nano_node: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
-	cd nano-node && cmake -G "Unix Makefiles" -DNANO_TEST=ON .
-	cd nano-node && $(MAKE) -j$(PARALLELISM) nano_node
-	cd nano-node && ./nano_node --diagnostics
+nano-build: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
+	mkdir -p nano-build
+	cd nano-build && cmake -G "Unix Makefiles" -DNANO_TEST=ON ../nano-node
+	cd nano-build && $(MAKE) -j$(PARALLELISM)
+	cd nano-build && ./nano_node --diagnostics
 
 # download a copy of the latest ledger and check the hash then inflate it
 # SECURITY RISK: this step is not secure and not recomended for proper nodes
@@ -54,16 +55,16 @@ get_ledger:
 	cd ledgercache && echo `cat data.ldb.sha256` data.ldb.7z | sha256sum --check
 	cd ledgercache && 7z x data.ldb.7z
 
-# force the downloaded ledger into nano-node/data/data.ldb
+# force the downloaded ledger into data/data.ldb
 force_ledger:
-	cp ledgercache/data.ldb nano-node/data/data.ldb
+	cp ledgercache/data.ldb data/data.ldb
 
 # run nano node using a local data directory
 run_node:
-	cd nano-node && ./nano_node --daemon --config rpc.enable=true --data_path data
+	cd nano-build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
 
 # tail all the log files
 tail_logs:
-	tail -f nano-node/data/log/*
+	tail -f data/log/*
 
-.PHONY: force_ledger run_node tail_logs
+.PHONY: force_ledger run_node tail_logs nano-build
