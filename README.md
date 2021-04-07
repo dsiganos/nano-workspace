@@ -15,8 +15,8 @@ After spending a couple of days with Nano, my biggest problems were:
 * It was a little confusing how to build the system, it took me a few hours to find my bearings. There is information on how to build the system but it is written for the experienced Nano developer and is not consice enough for Nano newbies (<https://docs.nano.org/integration-guides/build-options>). This project documents and automates the building of nano node with mostly default options.
 * There is no "hello world" like practice programs, it would be nice to introduce some trivial tools to play with and get some immediate feedback and leanring opportunities for newbies. This project aims to create a set of hello-world like programs for experiementation and learning.
 * Running a node gives very little feedback that makes any sense to a newbie, it would be nice to have a newbie mode with easy feedback and a page to explain the terminology used by the nano node logs. 
-* It is not easy to answer the question "is my node running well"?
-* It is not easy to answer the question "is my node synced"?
+* It is not easy at first to answer the question "is my node running well"?
+* It is not easy at first to answer the question "is my node synced"? ([is_synced.py](rpc/python/is_synced.py))
 * It is difficult to bootstrap the node (TODO: define bootstraping)
 * It is not obvious how to circumvent bootstraping for a faster sync-up (https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files).
 * It is not obvious how to setup a nano node locally within a disk directory so that all the relevant data is within a well-defined space and easy to find and track. Having all the data locally also allows for multiple parallel builds.
