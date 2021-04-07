@@ -109,8 +109,8 @@ The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count
 Once you have a node up and running and synced, you will want to create a wallet.  
 A wallet is made of a wallet ID and a secret seed.  
 A wallet can hold up to 2 to the power 32 accounts.  
-The script [wallet_create.py](src/python/wallet_create.py) shows how to create wallets.  
-Wallets can be destroyed with [wallet_destroy.py](src/python/wallet_destroy.py)
+The script [wallet_create.py](rpc/python/wallet_create.py) shows how to create wallets.  
+Wallets can be destroyed with [wallet_destroy.py](rpc/python/wallet_destroy.py)
 
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
