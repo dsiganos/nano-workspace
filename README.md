@@ -89,7 +89,7 @@ Once your node starts running, the first questions you are likely to have are:
 
 You can check the progress of your node by check the block counts [block_count.py](rpc/python/block_count.py).  
 You want to see your counters increasing steadily.  
-You can also look at the log gile in the data directory.
+You can also look at the log files in the data directory.
 
 To check if your node is synced, is less straightforward because there is no authoritative way to say you are synced.  
 However, you can make a educated estimate according to your view of the network.  
@@ -117,6 +117,7 @@ Wallets can be destroyed with [wallet_destroy.py](rpc/python/wallet_destroy.py)
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
 * https://docs.nano.org/integration-guides/build-options
 * https://docs.nano.org/node-implementation/contributing/#wip-developer-starter-pack
+* https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-1-build-your-foundation-cec2013657e1
 
 # TODO
 * Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
