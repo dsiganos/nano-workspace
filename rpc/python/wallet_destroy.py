@@ -20,6 +20,7 @@ params = {
   'wallet': args.wallet,
 }
 
+print('Destroying wallet %s' % args.wallet)
 session = requests.Session()
 result = post(session, params)
 print(json.dumps(result, indent=4))
