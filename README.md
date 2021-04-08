@@ -105,12 +105,19 @@ There are scripts written using shell scripting and curl in the [curl](rpc/curl)
 The script [block_count.py](rpc/python/block_count.py) is a trivial script that shows how to do a trivial RPC.
 The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count.py and showing how to manipulate the data returned.
 
-# Creating a wallet
+# Creating a wallet and accounts
 Once you have a node up and running and synced, you will want to create a wallet.  
+A wallet is a not a Nano network concept. The network does dot track nor reference wallets.
 A wallet is made of a wallet ID and a secret seed.  
-A wallet can hold up to 2 to the power 32 accounts.  
 The script [wallet_create.py](rpc/python/wallet_create.py) shows how to create wallets.  
 Wallets can be destroyed with [wallet_destroy.py](rpc/python/wallet_destroy.py)
+
+Wallets can hold accounts; the scripts below show how to create, list and remove accounts using the scripts:
+* [account_create.py](rpc/python/account_create.py)
+* [account_list.py](rpc/python/account_list.py)
+* [account_remove.py](rpc/python/account_remove.py)
+
+Note that you can't destroy an account once it is in the network.
 
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
