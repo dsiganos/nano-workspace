@@ -125,6 +125,7 @@ Note that you can't destroy an account once it is in the network.
 * https://docs.nano.org/integration-guides/build-options
 * https://docs.nano.org/node-implementation/contributing/#wip-developer-starter-pack
 * https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-1-build-your-foundation-cec2013657e1
+* https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-2-interacting-with-public-and-private-nano-adb98ef57fbf
 * https://nanoo.tools
 
 # TODO
