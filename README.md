@@ -117,6 +117,27 @@ Wallets can hold accounts; the scripts below show how to create, list and remove
 * [account_list.py](rpc/python/account_list.py)
 * [account_remove.py](rpc/python/account_remove.py)
 
+Each account has its own blockchain. To transfer nanos, a send block is created on the originating blockchain and that money is removed forever from its balance. That money is now in transit to the receiver. The receiver needs to create a receive block to receive the money. He can do this whenever or even never (burned money). A blockchain consists of a seriers of blocks. A block is made of the following fields:
+
+| Field | Explanation |
+|-------|-------------|
+| type            | This currently always set to "state", in the past other types were used too. |
+| subtype         | Thsi is optional and can be one of: "receive", "send", "change", "epoch". |
+| account         | The Nano for which the block is created. |
+| previous        | Hash of previous block in blockchain. |
+| representative  | The Nano Account to use as representative. |
+| balance         | Current balance of the Nano Account once the block is confirmed across the Nano Network. It is formatted in “raw” units. |
+| link            | hash of the corresponding send or receive block. |
+| link_as_account | address of corresponding account. |
+| signature       | A signature to validate the integrity of the Nano Block and prove it is sent by the blockchain owner. |
+| work            | Proof-of-work algorithm that performs the function of spam avoidance |
+
+There are a lot of denominations of nano but for our purposes at this stage, only 2 need to be known, NANO/MNano which is equal to 2^30 raw nanos.
+
+
+
+A much better explanations of wallets, accounts, nanos and blocks is [here](https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-1-build-your-foundation-cec2013657e1).
+
 Note that you can't destroy an account once it is in the network.
 
 # Useful links
