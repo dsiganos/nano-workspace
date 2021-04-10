@@ -30,6 +30,10 @@ $(BOOST_FILENAME_NO_EXT)/build.done: $(BOOST_FILENAME_NO_EXT)/bootstrap.done
 	cd $(BOOST_FILENAME_NO_EXT) && ./b2 -j$(PARALLELISM)
 	touch $@
 
+# boost generic target and link to real booster folder
+boost: $(BOOST_FILENAME_NO_EXT)/build.done
+	ln -s $(BOOST_FILENAME_NO_EXT) boost
+
 # clone nano-node github project recirsively and checkout a particular branch
 git.clone.done:
 	git clone --branch $(NANO_BRANCH) --recursive https://github.com/nanocurrency/nano-node.git
@@ -40,7 +44,7 @@ export BOOST_ROOT
 
 # build the nano node
 # TODO: this target should ideally split into smaller targets
-nano-build: git.clone.done $(BOOST_FILENAME_NO_EXT)/build.done
+nano-build: git.clone.done boost
 	mkdir -p nano-build data
 	cd nano-build && cmake -G "Unix Makefiles" -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
 	cd nano-build && $(MAKE) -j$(PARALLELISM)
