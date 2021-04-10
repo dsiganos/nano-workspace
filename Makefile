@@ -75,4 +75,8 @@ tail_logs:
 enable_control:
 	echo "enable_control = true" > data/config-rpc.toml
 
-.PHONY: force_ledger run_node tail_logs nano-build enable_control
+# install vscode files
+vscode:
+	cp -r ide/vscode nano-node/.vscode
+
+.PHONY: force_ledger run_node tail_logs nano-build enable_control vscode

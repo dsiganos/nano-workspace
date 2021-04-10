@@ -1,0 +1,9 @@
+{
+    "cmake.configureOnOpen": false,
+    "cmake.environment": {
+        "BOOST_ROOT": "../boost"
+    },
+    "cmake.configureSettings":{
+        "NANO_TEST": "ON"
+    }
+}
