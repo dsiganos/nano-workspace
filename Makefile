@@ -48,7 +48,7 @@ nano-build: git.clone.done boost
 	mkdir -p nano-build data
 	cd nano-build && cmake -G "Unix Makefiles" -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
 	cd nano-build && $(MAKE) -j$(PARALLELISM)
-	cd nano-build && ./nano_node --diagnostics --data_path ../data
+	#cd nano-build && ./nano_node --diagnostics --data_path ../data
 
 # download a copy of the latest ledger and check the hash then inflate it
 # SECURITY RISK: this step is not secure and not recomended for proper nodes
