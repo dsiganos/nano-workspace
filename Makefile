@@ -73,6 +73,10 @@ force_ledger:
 run_node:
 	cd nano-build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
 
+# run nano node using a local data directory
+run_wallet:
+	cd nano-build && ./nano_wallet --config rpc.enable=true --data_path ../data
+
 # tail all the log files
 tail_logs:
 	tail -f data/log/*
