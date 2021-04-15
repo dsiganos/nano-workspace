@@ -28,7 +28,7 @@ $(BOOST_FILENAME_NO_EXT)/unpack.done: $(BOOST_FILENAME_NO_EXT).7z
 
 # boost library bootstrap
 $(BOOST_FILENAME_NO_EXT)/bootstrap.done: $(BOOST_FILENAME_NO_EXT)/unpack.done
-	cd $(BOOST_FILENAME_NO_EXT) && ./bootstrap.sh
+	cd $(BOOST_FILENAME_NO_EXT) && ./bootstrap.sh --without-libraries=python
 	touch $@
 
 # build boost library
