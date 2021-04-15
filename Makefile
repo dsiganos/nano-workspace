@@ -13,7 +13,7 @@ BOOST_FILENAME_NO_EXT  := boost_$(BOOST_VER_WITH_UNDERSC)
 # use all processing units but one
 PARALLELISM := $(shell nproc --ignore 1)
 
-NANO_BRANCH := NANO-1792-reload-config-file
+NANO_BRANCH := V21.3
 
 default: nano-build
 
