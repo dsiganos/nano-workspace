@@ -1,7 +1,7 @@
 # Makefile for building a nano node from scratch on linux
 #
 # For Ubuntu 20.04, install these packages first:
-# apt-get install cmake git p7zip-full g++
+# apt-get install cmake git p7zip-full g++ qt5-default
 
 BOOST_VER_MAJOR := 1
 BOOST_VER_MINOR := 70
@@ -52,7 +52,7 @@ export BOOST_ROOT
 # TODO: this target should ideally split into smaller targets
 nano-build: git.clone.done boost
 	mkdir -p nano-build data
-	cd nano-build && cmake -G "Unix Makefiles" -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
+	cd nano-build && cmake -G "Unix Makefiles" -DNANO_GUI=ON -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
 	cd nano-build && $(MAKE) -j$(PARALLELISM)
 	#cd nano-build && ./nano_node --diagnostics --data_path ../data
 
