@@ -79,6 +79,7 @@ tail_logs:
 
 # rpc enable control
 enable_control:
+	mkdir -p data
 	echo "enable_control = true" > data/config-rpc.toml
 
 # install vscode files
