@@ -11,8 +11,8 @@ def parse_args():
     parser.add_argument("account")
     return parser.parse_args()
 
-def post(session, params, timeout=5):
-    resp = session.post('http://[::1]:7076', json=params, timeout=5)
+def post(session, params, timeout=60):
+    resp = session.post('http://[::1]:7076', json=params, timeout=timeout)
     return resp.json()
 
 args = parse_args()
