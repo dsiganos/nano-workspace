@@ -148,6 +148,7 @@ Note that you can't destroy an account once it is in the network.
 * https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-1-build-your-foundation-cec2013657e1
 * https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-2-interacting-with-public-and-private-nano-adb98ef57fbf
 * https://nanoo.tools
+* https://crates.io/crates/feeless (Rust tools and node for Nano)
 
 # TODO
 * Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
