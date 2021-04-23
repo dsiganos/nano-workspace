@@ -5,7 +5,8 @@
     "cmake.environment": {
         "BOOST_ROOT": "../boost"
     },
-    "cmake.configureSettings":{
-        "NANO_TEST": "ON"
+    "cmake.configureSettings": {
+        "NANO_TEST": "ON",
+        "NANO_GUI": "ON"
     }
 }
