@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/nano_node",
+            "program": "${workspaceFolder}/../vsbuild/nano_node",
             "args": ["--daemon", "--config", "rpc.enable=true", "--data_path", "../data"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
