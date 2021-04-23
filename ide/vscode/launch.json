@@ -5,11 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) nano_node",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/../vsbuild/nano_node",
             "args": ["--daemon", "--config", "rpc.enable=true", "--data_path", "../data"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) qt_test wallet.status",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../vsbuild/qt_test",
+            //"args": ["--gtest_filter=wallet.DISABLED_status", "--gtest_also_run_disabled_tests"],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
