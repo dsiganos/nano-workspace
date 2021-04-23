@@ -1,4 +1,5 @@
 {
+    "cmake.parallelJobs": 6,
     "cmake.configureOnOpen": false,
     "cmake.environment": {
         "BOOST_ROOT": "../boost"
