@@ -1,6 +1,7 @@
 {
     "cmake.parallelJobs": 6,
-    "cmake.buildDirectory": "${workspaceFolder}/../vsbuild",
+    "cmake.sourceDirectory": "${workspaceFolder}/nano-node",
+    "cmake.buildDirectory": "${workspaceFolder}/vsbuild",
     "cmake.configureOnOpen": false,
     "cmake.environment": {
         "BOOST_ROOT": "../boost"

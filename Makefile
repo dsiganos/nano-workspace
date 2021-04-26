@@ -86,9 +86,4 @@ enable_control:
 	mkdir -p data
 	echo "enable_control = true" > data/config-rpc.toml
 
-# install vscode files
-vscode:
-	mkdir -p nano-node/.vscode
-	cp ide/vscode/* nano-node/.vscode/
-
-.PHONY: force_ledger run_node tail_logs build enable_control vscode
+.PHONY: force_ledger run_node tail_logs build enable_control

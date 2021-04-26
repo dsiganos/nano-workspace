@@ -140,6 +140,9 @@ A much better explanations of wallets, accounts, nanos and blocks is [here](http
 
 Note that you can't destroy an account once it is in the network.
 
+# Using Visual Studio Code to build and debug
+The project is also setup to work with vscode. The vscode files files are in ".vscode". Vscode does not share the build directory with the makefile. The makefile builds in folder "build" whereas vscode builds in "vsbuild". The two build directories can coexist.
+
 # Useful links
 * https://docs.nano.org/node-implementation/contributing
 * https://docs.nano.org/running-a-node/ledger-management/#downloaded-ledger-files
