@@ -9,5 +9,17 @@
     "cmake.configureSettings": {
         "NANO_TEST": "ON",
         "NANO_GUI": "ON"
+    },
+    "search.useIgnoreFiles": false,
+    "files.exclude": {
+        "**/tags": true
+    },
+    "search.exclude": {
+        "/boost*": true,
+        "/build": true,
+        "/data": true,
+        "/example": true,
+        "/ledgercache": true,
+        "/vsbuild": true
     }
 }
