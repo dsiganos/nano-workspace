@@ -15,7 +15,7 @@ PARALLELISM := $(shell nproc --ignore 1)
 
 NANO_BRANCH := V21.3
 
-default: nano-build
+default: build
 
 # boost library download
 $(BOOST_FILENAME_NO_EXT).7z:
@@ -50,11 +50,11 @@ export BOOST_ROOT
 
 # build the nano node
 # TODO: this target should ideally split into smaller targets
-nano-build: git.clone.done boost
-	mkdir -p nano-build data
-	cd nano-build && cmake -G "Unix Makefiles" -DNANO_GUI=ON -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
-	cd nano-build && $(MAKE) -j$(PARALLELISM)
-	#cd nano-build && ./nano_node --diagnostics --data_path ../data
+build: git.clone.done boost
+	mkdir -p build data
+	cd build && cmake -G "Unix Makefiles" -DNANO_GUI=ON -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
+	cd build && $(MAKE) -j$(PARALLELISM)
+	#cd build && ./nano_node --diagnostics --data_path ../data
 
 # download a copy of the latest ledger and check the hash then inflate it
 # SECURITY RISK: this step is not secure and not recomended for proper nodes
@@ -71,11 +71,11 @@ force_ledger:
 
 # run nano node using a local data directory
 run_node:
-	cd nano-build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
+	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
 
 # run nano node using a local data directory
 run_wallet:
-	cd nano-build && ./nano_wallet --config rpc.enable=true --data_path ../data
+	cd build && ./nano_wallet --config rpc.enable=true --data_path ../data
 
 # tail all the log files
 tail_logs:
@@ -91,4 +91,4 @@ vscode:
 	mkdir -p nano-node/.vscode
 	cp ide/vscode/* nano-node/.vscode/
 
-.PHONY: force_ledger run_node tail_logs nano-build enable_control vscode
+.PHONY: force_ledger run_node tail_logs build enable_control vscode
