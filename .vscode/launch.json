@@ -24,7 +24,7 @@
             ]
         },
         {
-            "name": "(gdb) qt_test wallet.status",
+            "name": "(gdb) qt_test",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/vsbuild/qt_test",
