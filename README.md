@@ -107,7 +107,7 @@ The [telemetry.py](rpc/python/telemetry.py) script is a step-up from block_count
 
 # Creating a wallet and accounts
 Once you have a node up and running and synced, you will want to create a wallet.  
-A wallet is not a Nano network concept. The network does dot track nor reference wallets.
+A wallet is not a Nano network concept. The network does not track nor reference wallets.
 A wallet is made of a wallet ID and a secret seed.  
 The script [wallet_create.py](rpc/python/wallet_create.py) shows how to create wallets.  
 Wallets can be destroyed with [wallet_destroy.py](rpc/python/wallet_destroy.py)
