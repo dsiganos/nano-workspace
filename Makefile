@@ -13,7 +13,7 @@ BOOST_FILENAME_NO_EXT  := boost_$(BOOST_VER_WITH_UNDERSC)
 # use all processing units but one
 PARALLELISM := $(shell nproc --ignore 1)
 
-NANO_BRANCH := V21.3
+NANO_BRANCH := V21.3RC2
 
 default: build
 
