@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/nano-node/**",
+                    "${workspaceFolder}/boost"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
