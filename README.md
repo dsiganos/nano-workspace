@@ -43,9 +43,12 @@ The purpose of that makefile is to build nano_node and its dependencies.
 Currently it does the following:
 * downloads and builds the boost library
 * git clones the nano-node project and its subprojects
-* builds nano-node
+* builds nano-node, Qt wallet and self test executables
+* optionally downloads a ledger for fast bootstrapping
+* hows how to enable_control for RPCs
+* integrates with Visual Studio Code (look inside the .vscode folder for settings)
 
-To do all the above, type 'make' to execute the default makefile target.
+To build the software, type 'make' to execute the default makefile target or start VSCode at the top directory and do a cmake build.
 
 There are some other targets in the makefile for convenience and documentation purposes:
 
@@ -62,6 +65,12 @@ Force copy the downloaded ledger into the nano-node/data folder (this will overw
 
 ## make run_node
 Run the nano node program with mostly default arguments. Use the folder 'data', inside nano-node, to store the ledger.
+
+## make tail_logs
+Runs a tail command in the logs folder.
+
+## make enable_control
+Sets the RPC enable_control flag.
 
 # Running the node
 To start the node run 'make run_node'.  
