@@ -21,5 +21,6 @@
         "/example": true,
         "/ledgercache": true,
         "/vsbuild": true
-    }
+    },
+    "editor.wordWrap": "on"
 }
