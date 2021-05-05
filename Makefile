@@ -13,6 +13,7 @@ BOOST_FILENAME_NO_EXT  := boost_$(BOOST_VER_WITH_UNDERSC)
 # use all processing units but one
 PARALLELISM := $(shell nproc --ignore 1)
 
+NANO_REPO   := https://github.com/nanocurrency/nano-node.git
 NANO_BRANCH := V21.3RC2
 
 default: build
@@ -42,7 +43,7 @@ boost: $(BOOST_FILENAME_NO_EXT)/build.done
 
 # clone nano-node github project recirsively and checkout a particular branch
 git.clone.done:
-	git clone --branch $(NANO_BRANCH) --recursive https://github.com/nanocurrency/nano-node.git nano-node
+	git clone --branch $(NANO_BRANCH) --recursive $(NANO_REPO) nano-node
 	touch $@
 
 BOOST_ROOT := $(CURDIR)/$(BOOST_FILENAME_NO_EXT)
