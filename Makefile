@@ -42,7 +42,7 @@ boost: $(BOOST_FILENAME_NO_EXT)/build.done
 
 # clone nano-node github project recirsively and checkout a particular branch
 git.clone.done:
-	git clone --branch $(NANO_BRANCH) --recursive https://github.com/nanocurrency/nano-node.git
+	git clone --branch $(NANO_BRANCH) --recursive https://github.com/nanocurrency/nano-node.git nano-node
 	touch $@
 
 BOOST_ROOT := $(CURDIR)/$(BOOST_FILENAME_NO_EXT)
