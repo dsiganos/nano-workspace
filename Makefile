@@ -14,7 +14,7 @@ BOOST_FILENAME_NO_EXT  := boost_$(BOOST_VER_WITH_UNDERSC)
 PARALLELISM := $(shell nproc --ignore 1)
 
 NANO_REPO   := https://github.com/nanocurrency/nano-node.git
-NANO_BRANCH := V21.3RC2
+NANO_BRANCH := develop
 
 default: build
 
