@@ -87,4 +87,9 @@ enable_control:
 	mkdir -p data
 	echo "enable_control = true" > data/config-rpc.toml
 
+enable_voting:
+	mkdir -p data
+	echo "[node]"               >  data/config-node.toml
+	echo "enable_voting = true" >> data/config-node.toml
+
 .PHONY: force_ledger run_node tail_logs build enable_control
