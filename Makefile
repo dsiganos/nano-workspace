@@ -75,6 +75,11 @@ run_node:
 	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
 
 # run nano node using a local data directory
+run_node_beta:
+	mkdir -p ../betadata
+	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../betadata --network beta
+
+# run nano node using a local data directory
 run_wallet:
 	cd build && ./nano_wallet --config rpc.enable=true --data_path ../data
 
