@@ -30,12 +30,22 @@ def parallel_connect(endpoints):
         t.start()
     return threads
 
-print('Live nodes')
+print('Live nodes (peering.nano.org)')
 live_endpoints = [ (x, 7075) for x in get_all_dns_addresses('peering.nano.org') ]
 for t in parallel_connect(live_endpoints):
     t.join()
 
-print('Beta nodes')
+print('Beta nodes (peering-beta.nano.org)')
 beta_endpoints = [ (x, 54000) for x in get_all_dns_addresses('peering-beta.nano.org') ]
 for t in parallel_connect(beta_endpoints):
+    t.join()
+
+other_endpoints = [
+    ('185.12.7.225',  7075),
+    ('174.138.4.198', 7075),
+    ('139.59.31.249', 7075),
+    ('45.76.114.63',  7075),
+]
+print('Other nodes')
+for t in parallel_connect(other_endpoints):
     t.join()
