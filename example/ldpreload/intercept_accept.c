@@ -17,7 +17,12 @@ int accept4(int sockfd, struct sockaddr *addr, socklen_t *addrlen, int flags)
 
 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
 {
-    printf("accept intercept\n");
+    static int count = 0;
+    if (++count % 5 == 0) {
+        printf("accept intercepted and returning error\n");
+        errno = ENOBUFS;
+        return -1;
+    }
 
     int (*original_accept)(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
     original_accept = dlsym(RTLD_NEXT, "accept");
