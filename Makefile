@@ -1,7 +1,7 @@
 # Makefile for building a nano node from scratch on linux
 #
 # For Ubuntu 20.04, install these packages first:
-# apt-get install cmake git p7zip-full g++ qt5-default
+# apt-get install make cmake git p7zip-full g++ qt5-default
 
 BOOST_VER_MAJOR := 1
 BOOST_VER_MINOR := 70
