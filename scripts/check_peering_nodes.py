@@ -3,6 +3,7 @@ import socket
 import sys
 import dns.resolver
 import threading
+import errno
 
 tmo = 3
 
@@ -16,8 +17,10 @@ def connect(to):
     try:
         sock.connect(to)
         print('%15s:%-5s connected' % to)
-    except:
-        print('%15s:%-5s NOT RESPONDED (within %s secs)' % (*to,  tmo))
+    except socket.timeout as e:
+        print('%15s:%-5s FAILED, timeout after %s secs' % (*to,  tmo))
+    except socket.error as e:
+        print('%15s:%-5s FAILED, %s, %s' % (*to,  e.errno, e.strerror))
 
 def parallel_connect(endpoints):
     threads = []
