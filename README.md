@@ -48,6 +48,9 @@ Currently it does the following:
 * hows how to enable_control for RPCs
 * integrates with Visual Studio Code (look inside the .vscode folder for settings)
 
+Before building the software, ensure you have these dependencies installed (for ubuntu 20.04):  
+```apt-get install make cmake git p7zip-full g++ qt5-default```
+
 To build the software, type 'make' to execute the default makefile target or start VSCode at the top directory and do a cmake build.
 
 There are some other targets in the makefile for convenience and documentation purposes:
