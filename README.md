@@ -164,6 +164,7 @@ The project is also setup to work with vscode. The vscode files are in ".vscode"
 * https://medium.com/nanocurrency/getting-started-developing-with-nano-currency-part-2-interacting-with-public-and-private-nano-adb98ef57fbf
 * https://nanoo.tools
 * https://crates.io/crates/feeless (Rust tools and node for Nano)
+* https://nano.community/getting-started-devs/protocol-reference (notes/help about C++ source code)
 
 # TODO
 * Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
