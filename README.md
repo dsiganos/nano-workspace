@@ -31,6 +31,7 @@ This project will try to provide solutions to the issues listed above. The targe
 | Count (block_count)  | Block count is the number of checked blocked. Checked blocked are blocked that have been verified and are trusted. In a virgin system the block count start at 1. There is one block that is trusted, the genesis block. |
 |  Unchecked           | Blocks that have been received but have not been checked yet. Initially, there is a large number of unchecked blocks and only one checked block because blocks cannot be checked until there is a chain of blocks that can lead to the genesis block, the only trusted block at the beggining. |
 | Cemented             | TODO: I'll fill this in when I find out what it is :-) |
+| Root (of block)      | The root of a block is the previous block, except for open blocks, where it is the account public key. |
 
 Nano glossary:  
 There is an official Nano glossary and it can be found here:  
