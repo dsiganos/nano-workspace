@@ -74,10 +74,15 @@ force_ledger:
 run_node:
 	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../data
 
-# run nano node using a local data directory
+# run nano node in beta network using a local data directory "betadata"
 run_node_beta:
 	mkdir -p ../betadata
 	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../betadata --network beta
+
+# run nano node in test network using a local data directory "testdata"
+run_node_test:
+	mkdir -p ../testdata
+	cd build && ./nano_node --daemon --config rpc.enable=true --data_path ../testdata --network test
 
 # run nano node using a local data directory
 run_wallet:
