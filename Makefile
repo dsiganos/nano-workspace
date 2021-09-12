@@ -6,12 +6,13 @@
 BOOST_VER_MAJOR := 1
 BOOST_VER_MINOR := 70
 BOOST_VER_PATCH := 0
-BOOST_VER_WITH_DOTS    := $(BOOST_VER_MAJOR).$(BOOST_VER_MINOR).$(BOOST_VER_PATCH)
-BOOST_VER_WITH_UNDERSC := $(BOOST_VER_MAJOR)_$(BOOST_VER_MINOR)_$(BOOST_VER_PATCH)
-BOOST_FILENAME_NO_EXT  := boost_$(BOOST_VER_WITH_UNDERSC)
+export BOOST_VER_PATCH
+export BOOST_VER_MAJOR
+export BOOST_VER_MINOR
 
 # use all processing units but one
 PARALLELISM := $(shell nproc --ignore 1)
+export PARALLELISM
 
 NANO_REPO   := https://github.com/nanocurrency/nano-node.git
 NANO_BRANCH := develop
@@ -22,36 +23,16 @@ NETNAME  := live
 
 default: build
 
-# boost library download
-$(BOOST_FILENAME_NO_EXT).7z:
-	wget https://sourceforge.net/projects/boost/files/boost/$(BOOST_VER_WITH_DOTS)/$@
-
-# unpacking boost library
-$(BOOST_FILENAME_NO_EXT)/unpack.done: $(BOOST_FILENAME_NO_EXT).7z
-	7z x $(BOOST_FILENAME_NO_EXT).7z
-	touch $@
-
-# boost library bootstrap
-$(BOOST_FILENAME_NO_EXT)/bootstrap.done: $(BOOST_FILENAME_NO_EXT)/unpack.done
-	cd $(BOOST_FILENAME_NO_EXT) && ./bootstrap.sh --without-libraries=python
-	touch $@
-
-# build boost library
-$(BOOST_FILENAME_NO_EXT)/build.done: $(BOOST_FILENAME_NO_EXT)/bootstrap.done
-	cd $(BOOST_FILENAME_NO_EXT) && ./b2 -j$(PARALLELISM)
-	touch $@
-
-# boost generic target and link to real booster folder
-boost: $(BOOST_FILENAME_NO_EXT)/build.done
-	ln -s $(BOOST_FILENAME_NO_EXT) boost
-
 # clone nano-node github project recirsively and checkout a particular branch
 git.clone.done:
 	git clone --branch $(NANO_BRANCH) --recursive $(NANO_REPO) nano-node
 	touch $@
 
-BOOST_ROOT := $(CURDIR)/$(BOOST_FILENAME_NO_EXT)
+BOOST_ROOT := $(CURDIR)/boost/boost
 export BOOST_ROOT
+
+boost:
+	$(MAKE) -C boost
 
 # build the nano node
 # TODO: this target should ideally split into smaller targets
@@ -106,4 +87,4 @@ enable_voting:
 	echo "[node]"               >  $(DATAPATH)/config-node.toml
 	echo "enable_voting = true" >> $(DATAPATH)/config-node.toml
 
-.PHONY: force_ledger run_node run_node_beta run_node_test tail_logs build enable_control
+.PHONY: force_ledger run_node run_node_beta run_node_test tail_logs build enable_control boost
