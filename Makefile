@@ -28,11 +28,15 @@ git.clone.done:
 	git clone --branch $(NANO_BRANCH) --recursive $(NANO_REPO) nano-node
 	touch $@
 
+ifeq ($(BOOST_ROOT),)
 BOOST_ROOT := $(CURDIR)/boost/boost
 export BOOST_ROOT
-
 boost:
 	$(MAKE) -C boost
+else
+boost:
+	echo "Not building local boost library, using $(BOOST_ROOT)"
+endif
 
 # build the nano node
 # TODO: this target should ideally split into smaller targets
