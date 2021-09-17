@@ -43,6 +43,25 @@
             ]
         },
         {
+            "name": "(gdb) nano_node_beta",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/vsbuild/nano_node",
+            "args": ["--daemon", "--config", "rpc.enable=true", "--data_path", "../testdata", "--network", "test"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/vsbuild",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "(gdb) core_test",
             "type": "cppdbg",
             "request": "launch",
