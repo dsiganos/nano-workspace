@@ -4,9 +4,9 @@
     "cmake.buildDirectory": "${workspaceFolder}/vsbuild",
     "cmake.configureOnOpen": false,
     "cmake.environment": {
-        "BOOST_ROOT": "../boost"
     },
     "cmake.configureSettings": {
+        "BOOST_ROOT": "${env:BOOST_ROOT}",
         "NANO_TEST": "ON",
         "NANO_GUI": "ON"
     },

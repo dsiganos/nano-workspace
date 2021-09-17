@@ -91,4 +91,9 @@ enable_voting:
 	echo "[node]"               >  $(DATAPATH)/config-node.toml
 	echo "enable_voting = true" >> $(DATAPATH)/config-node.toml
 
-.PHONY: force_ledger run_node run_node_beta run_node_test tail_logs build enable_control boost
+# target for starting vscode, vscode needs to be started from here, when using locally built boost lib,
+# so that it can pick up the environment variable BOOST_ROOT, which is set further up the makefile
+vscode:
+	code .
+
+.PHONY: force_ledger run_node run_node_beta run_node_test tail_logs build enable_control boost vscode
