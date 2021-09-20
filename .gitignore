@@ -1,4 +1,6 @@
 /data
+/betadata
+/testdata
 /build
 /vsbuild
 /git.clone.done
