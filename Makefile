@@ -96,4 +96,10 @@ enable_voting:
 vscode:
 	code .
 
+# target to create code blocks project
+codeblocks: git.clone.done boost
+	mkdir -p $(BUILDDIR) $(DATAPATH)
+	cd $(BUILDDIR) && cmake -G "CodeBlocks - Unix Makefiles" -DNANO_GUI=ON -DNANO_TEST=ON \
+		-DCMAKE_BUILD_TYPE=Debug ../nano-node
+
 .PHONY: force_ledger run_node run_node_beta run_node_test tail_logs build enable_control boost vscode
