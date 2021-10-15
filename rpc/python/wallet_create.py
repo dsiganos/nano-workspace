@@ -5,23 +5,30 @@
 import requests
 import json
 import argparse
-import os
-import binascii
+
+import common
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--seed', default=get_random_seed(),
+
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('-b', '--beta', action='store_true', default=False,
+                       help='use beta network')
+    group.add_argument('-t', '--test', action='store_true', default=False,
+                    help='use test network')
+
+    parser.add_argument('--rpc',
+                        help='RPC URL to contact')
+
+    parser.add_argument('-s', '--seed', default=common.get_random_seed(),
                         help='seed to use for wallet')
+
     return parser.parse_args()
 
-def get_random_seed():
-    return binascii.b2a_hex(os.urandom(32)).decode('ascii')
-
-def post(session, params, timeout=5):
-    resp = session.post('http://[::1]:7076', json=params, timeout=5)
-    return resp.json()
-
 args = parse_args()
+
+rpc_url = common.get_rpc_url(args)
+print('RPC URL = %s' % rpc_url)
 
 params = {
   'action': 'wallet_create',
@@ -29,6 +36,6 @@ params = {
 }
 
 session = requests.Session()
-result = post(session, params)
+result = common.post(session, params, rpc_url)
 print(json.dumps(result, indent=4))
 print('seed: %s' % args.seed)
