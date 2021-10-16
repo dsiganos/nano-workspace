@@ -5,23 +5,36 @@ import json
 import sys
 import argparse
 
+import common
+
 def parse_args():
     parser = argparse.ArgumentParser()
+
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('-b', '--beta', action='store_true', default=False,
+                       help='use beta network')
+    group.add_argument('-t', '--test', action='store_true', default=False,
+                    help='use test network')
+
+    parser.add_argument('--rpc',
+                        help='RPC URL to contact')
+
     parser.add_argument('-r', '--raw', action='store_true', default=False,
                         help='raw telemetry data')
+
     parser.add_argument('-m', '--max_block_count', action='store_true', default=False,
                         help='print the maximum block count seen in the network')
+
     return parser.parse_args(sys.argv[1:])
 
 def average(lst):
     if len(lst) == 0: return 0
     return sum(lst) // len(lst)
 
-def post(session, params, timeout=5):
-    resp = session.post('http://[::1]:7076', json=params, timeout=5)
-    return resp.json()
-
 args = parse_args()
+
+rpc_url = common.get_rpc_url(args)
+print('RPC URL = %s' % rpc_url)
 
 if args.raw or args.max_block_count:
     params = {'action' : 'telemetry', 'raw' : 'true'}
@@ -29,8 +42,7 @@ else:
     params = {'action' : 'telemetry'}
 
 session = requests.Session()
-
-result = post(session, params)
+result = common.post(session, params, rpc_url)
 
 if args.max_block_count:
     metrics = result['metrics']

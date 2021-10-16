@@ -15,7 +15,7 @@ def parse_args():
     group.add_argument('-b', '--beta', action='store_true', default=False,
                        help='use beta network')
     group.add_argument('-t', '--test', action='store_true', default=False,
-                    help='use test network')
+                       help='use test network')
 
     parser.add_argument('--rpc',
                         help='RPC URL to contact')
