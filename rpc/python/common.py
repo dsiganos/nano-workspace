@@ -1,13 +1,15 @@
 import binascii
 import os
 
+default_rpc_port = 7076
+
 def get_default_rpc_port(args):
     if args.beta:
         return 55000
     elif args.test:
         return 17076
     else:
-        return 7076
+        return default_rpc_port
 
 
 def get_rpc_url(args):
