@@ -44,6 +44,7 @@ build: git.clone.done boost
 	mkdir -p $(BUILDDIR) $(DATAPATH)
 	cd $(BUILDDIR) && cmake \
         -G "Unix Makefiles" \
+        -DNANO_STACKTRACE_BACKTRACE=ON \
         -DNANO_GUI=ON \
         -DNANO_TEST=ON \
         -DCMAKE_BUILD_TYPE=Debug \
