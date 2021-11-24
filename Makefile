@@ -42,7 +42,12 @@ endif
 # TODO: this target should ideally split into smaller targets
 build: git.clone.done boost
 	mkdir -p $(BUILDDIR) $(DATAPATH)
-	cd $(BUILDDIR) && cmake -G "Unix Makefiles" -DNANO_GUI=ON -DNANO_TEST=ON -DCMAKE_BUILD_TYPE=Debug ../nano-node
+	cd $(BUILDDIR) && cmake \
+        -G "Unix Makefiles" \
+        -DNANO_GUI=ON \
+        -DNANO_TEST=ON \
+        -DCMAKE_BUILD_TYPE=Debug \
+        ../nano-node
 	cd $(BUILDDIR) && $(MAKE) -j$(PARALLELISM)
 	#cd $(BUILDDIR) && ./nano_node --diagnostics --data_path ../$(DATAPATH)
 
