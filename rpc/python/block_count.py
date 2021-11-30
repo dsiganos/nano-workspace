@@ -44,7 +44,7 @@ def produce_csv_values(session, rpc_url):
         if time.time() - lasttime > 10:
             timestamp = datetime.datetime.utcnow().strftime("%H:%M:%S")
             _, count, unchecked, cemented = get_block_count(session, rpc_url)
-            print('%s, %s, %s, %s, %s' % (i, timestamp, count, unchecked, cemented))
+            print('%s, %s, %s, %s, %s' % (i, timestamp, count, unchecked, cemented), flush=True)
             i += 1
             lasttime = time.time()
         time.sleep(0.1)
