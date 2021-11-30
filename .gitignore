@@ -9,3 +9,4 @@
 /data.ldb.sha256
 /ledgercache
 *.swp
+__pycache__
