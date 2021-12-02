@@ -31,8 +31,8 @@ rpc_url = common.get_rpc_url(args)
 print('RPC URL = %s' % rpc_url)
 
 params = {
-  "action": "pending",
-  "account": args.account
+  "action": "receivable",
+  "account": args.account,
 }
 
 if args.count != None:
