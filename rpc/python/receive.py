@@ -5,7 +5,6 @@
 import requests
 import json
 import argparse
-import sys
 
 import common
 
@@ -21,14 +20,11 @@ def parse_args():
     parser.add_argument('--rpc',
                         help='RPC URL to contact')
 
-    parser.add_argument('-w', '--wallet',
+    parser.add_argument('wallet',
                         help='receive wallet')
 
-    parser.add_argument('-a', '--account',
+    parser.add_argument('account',
                         help='receive account')
-
-    parser.add_argument('-p', '--prvkey',
-                        help='private key to sign the block (instead of wallet/account)')
 
     parser.add_argument('block',
                         help='hash of send block to receive')
@@ -36,15 +32,6 @@ def parse_args():
     return parser.parse_args()
 
 args = parse_args()
-
-if args.prvkey:
-    if args.wallet or args.account:
-        print('Private key given, wallet/account should not be set.')
-        sys.exit(1)
-else:
-    if not args.wallet or not args.account:
-        print('Wallet and account must be set, if private key is not used.')
-        sys.exit(1)
 
 rpc_url = common.get_rpc_url(args)
 print('RPC URL = %s' % rpc_url)
@@ -55,13 +42,6 @@ params = {
   'account': args.account,
   'block': args.block,
 }
-
-if args.wallet or args.account:
-    params['wallet']: args.wallet
-    params['account']: args.account
-else:
-    params['key']: args.prvkey
-
 print(json.dumps(params, indent=4))
 
 session = requests.Session()
