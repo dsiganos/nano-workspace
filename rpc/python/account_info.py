@@ -38,3 +38,7 @@ params = {
 session = requests.Session()
 result = common.post(session, params, rpc_url)
 print(json.dumps(result, indent=4))
+
+raw_balance = int(result['balance'])
+nano_balance = raw_balance / (10**30)
+print('Balance (Nano): %s' % nano_balance)
