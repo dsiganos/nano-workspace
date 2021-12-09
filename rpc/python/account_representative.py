@@ -5,6 +5,7 @@
 import requests
 import json
 import argparse
+import nanolib
 
 import common
 
@@ -38,3 +39,6 @@ params = {
 session = requests.Session()
 result = common.post(session, params, rpc_url)
 print(json.dumps(result, indent=4))
+
+repr_bin = nanolib.get_account_public_key(account_id=result['representative'])
+print('RAW: %s' % repr_bin.upper())
