@@ -5,6 +5,7 @@
 import requests
 import json
 import argparse
+import nanolib
 
 import common
 
@@ -46,3 +47,6 @@ print('Unconfirmed Balance (Nano): %s' % '{:,}'.format(nano_balance))
 
 confirmed_nano_balance = int(result['confirmed_balance']) / (10**30)
 print('Confirmed   Balance (Nano): %s' % '{:,}'.format(confirmed_nano_balance))
+
+pubkey = nanolib.get_account_public_key(account_id=args.account)
+print('PUBKEY: %s' % pubkey.upper())
