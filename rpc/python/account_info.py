@@ -42,7 +42,7 @@ print(json.dumps(result, indent=4))
 
 raw_balance = int(result['balance'])
 nano_balance = raw_balance / (10**30)
-print('Unconfirmed Balance (Nano): %s' % nano_balance)
+print('Unconfirmed Balance (Nano): %s' % '{:,}'.format(nano_balance))
 
 confirmed_nano_balance = int(result['confirmed_balance']) / (10**30)
-print('Confirmed   Balance (Nano): %s' % confirmed_nano_balance)
+print('Confirmed   Balance (Nano): %s' % '{:,}'.format(confirmed_nano_balance))
