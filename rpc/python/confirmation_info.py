@@ -23,6 +23,9 @@ def parse_args():
     parser.add_argument('-r', '--root',
                         help='root to enquire about')
 
+    parser.add_argument('-R', '--representatives', action='store_true', default=False,
+                        help='request representative details')
+
     parser.add_argument('-c', '--nocontents', action='store_true', default=False,
                        help='do not request contents')
 
@@ -52,7 +55,12 @@ for root in roots:
       'json_block': 'true',
       'root': root
     }
+
     if args.nocontents:
         params['contents'] = 'false'
+    
+    if args.representatives:
+        params['representatives'] = 'true'
+    
     result = common.post(session, params, rpc_url)
     print(json.dumps(result, indent=4))
