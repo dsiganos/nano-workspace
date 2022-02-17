@@ -140,7 +140,7 @@ Each account has its own blockchain. To transfer nanos, a send block is created 
 | previous        | Hash of previous block in blockchain. |
 | representative  | The Nano Account to use as representative. |
 | balance         | Current balance of the Nano Account once the block is confirmed across the Nano Network. It is formatted in “raw” units. |
-| link            | hash of the corresponding send or receive block. |
+| link            | Link depends on context. For send blocks it contains the public key of the receiver. For receive blocks, it contains the hash of the associated send block. For epoch blocks, it is set to a specific string. |
 | link_as_account | address of corresponding account. |
 | signature       | A signature to validate the integrity of the Nano Block and prove it is sent by the blockchain owner. |
 | work            | Proof-of-work algorithm that performs the function of spam avoidance |
