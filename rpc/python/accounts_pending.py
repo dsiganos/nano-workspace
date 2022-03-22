@@ -5,7 +5,7 @@ import json
 import argparse
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser()
     parser.add_argument('account_ids', nargs='+',
                         help='account ID')
     return parser.parse_args()
