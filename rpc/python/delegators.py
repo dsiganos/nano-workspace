@@ -29,3 +29,7 @@ params = {
 session = requests.Session()
 result = post(session, params)
 print(json.dumps(result, indent=4))
+
+for delegator, weight in result['delegators'].items():
+    weight_in_nano = int(weight) / (10**30)
+    print('%s %s' % (delegator, '{:,}'.format(weight_in_nano)))
