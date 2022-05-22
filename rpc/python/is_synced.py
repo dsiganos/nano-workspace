@@ -72,8 +72,11 @@ result = common.post(session, {'action' : 'block_count'}, rpc_url)
 local_block_count = int(result['count'])
 diff = local_block_count - average_block_count
 
-print('Local block count: %s, Average network block count: %s, Diff: %s' %
-      (local_block_count, average_block_count, diff))
+print('Local block count: %s, Average network block count: %s, Max bc: %s, Diff: %s' %
+      (local_block_count, average_block_count, max(block_counts_filtered), diff))
+
+print('Local block count: %s, Max network block count: %s, Diff: %s' %
+      (local_block_count, max(block_counts_filtered), local_block_count - max(block_counts_filtered)))
 
 if diff < 0:
     print('ERROR: the local node is not synced sufficiently')
