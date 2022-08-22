@@ -10,8 +10,11 @@ export BOOST_VER_PATCH
 export BOOST_VER_MAJOR
 export BOOST_VER_MINOR
 
-# use all processing units but one
+ifeq ($(shell uname),Darwin)
+PARALLELISM := $(shell sysctl -n hw.logicalcpu)
+else
 PARALLELISM := $(shell nproc --ignore 1)
+endif
 export PARALLELISM
 
 NANO_REPO   := https://github.com/nanocurrency/nano-node.git

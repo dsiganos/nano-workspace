@@ -6,8 +6,17 @@ ifeq ($(BOOST_VER_MINOR),)
 BOOST_VER_MAJOR := 1
 BOOST_VER_MINOR := 80
 BOOST_VER_PATCH := 0
-PARALLELISM := $(shell nproc --ignore 1)
 endif
+
+ifeq ($(shell uname),Darwin)
+PARALLELISM := $(shell sysctl -n hw.logicalcpu)
+7ZIP := 7zz
+else
+PARALLELISM := $(shell nproc --ignore 1)
+7ZIP := 7z
+endif
+export PARALLELISM
+
 
 BOOST_VER_WITH_DOTS    := $(BOOST_VER_MAJOR).$(BOOST_VER_MINOR).$(BOOST_VER_PATCH)
 BOOST_VER_WITH_UNDERSC := $(BOOST_VER_MAJOR)_$(BOOST_VER_MINOR)_$(BOOST_VER_PATCH)
@@ -23,7 +32,7 @@ $(BOOST_FILENAME_NO_EXT).7z:
 
 # unpacking boost library
 $(BOOST_FILENAME_NO_EXT)/unpack.done: $(BOOST_FILENAME_NO_EXT).7z
-	7z x $(BOOST_FILENAME_NO_EXT).7z
+	$(7ZIP) x $(BOOST_FILENAME_NO_EXT).7z
 	touch $@
 
 # boost library bootstrap
