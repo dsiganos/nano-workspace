@@ -4,7 +4,7 @@
 # in the parent makefile but this makefile can also work independently
 ifeq ($(BOOST_VER_MINOR),)
 BOOST_VER_MAJOR := 1
-BOOST_VER_MINOR := 70
+BOOST_VER_MINOR := 80
 BOOST_VER_PATCH := 0
 PARALLELISM := $(shell nproc --ignore 1)
 endif

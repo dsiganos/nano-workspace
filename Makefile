@@ -4,7 +4,7 @@
 # apt-get install make cmake git p7zip-full g++ qt5-default
 
 BOOST_VER_MAJOR := 1
-BOOST_VER_MINOR := 70
+BOOST_VER_MINOR := 80
 BOOST_VER_PATCH := 0
 export BOOST_VER_PATCH
 export BOOST_VER_MAJOR
