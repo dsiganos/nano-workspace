@@ -51,7 +51,10 @@ Currently it does the following:
 * integrates with Visual Studio Code (look inside the .vscode folder for settings)
 
 Before building the software, ensure you have these dependencies installed (for ubuntu 20.04):  
-```apt-get install make cmake git p7zip-full g++ qt5-default```
+```apt-get install make cmake git p7zip-full g++ qt5-default```.
+
+On Ubuntu 21 and above instead of qt5-default, install:  
+```qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools```
 
 To build the software, type 'make' to execute the default makefile target or start VSCode at the top directory and do a cmake build.
 
