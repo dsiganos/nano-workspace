@@ -2,20 +2,19 @@ FROM --platform=linux/arm64 dsiganos/nano_node_base_tools_arm64:0.1 AS builder
 
 WORKDIR /workspace
 
-ARG NETWORK=live
-RUN echo ${NETWORK} >/etc/nano-network
-
 RUN git clone https://github.com/dsiganos/nano-workspace.git /workspace
 RUN sed -i -e 's/-DCMAKE_BUILD_TYPE=Debug/-DCMAKE_BUILD_TYPE=Release/' /workspace/Makefile
 RUN make build
 
 FROM --platform=linux/arm64 ubuntu:20.04 AS node
 
+ARG NETWORK=live
+RUN echo ${NETWORK} >/etc/nano-network
+
 COPY --from=builder /workspace/build/nano_node /usr/bin
 COPY --from=builder /workspace/build/nano_rpc /usr/bin
 COPY --from=builder /workspace/build/nano_pow_server /usr/bin
 COPY --from=builder /workspace/nano-node/api/ /usr/bin/api/
-COPY --from=builder /etc/nano-network /etc
 COPY --from=builder /workspace/nano-node/docker/node/entry.sh /usr/bin/entry.sh
 COPY --from=builder /workspace/nano-node/docker/node/config /usr/share/nano/config
 RUN chmod +x /usr/bin/entry.sh
