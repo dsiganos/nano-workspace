@@ -31,13 +31,16 @@ params = {
 
 session = requests.Session()
 result = common.post(session, params, rpc_url)
-print(json.dumps(result, indent=4))
 
 reps = result['representatives']
-print(len(reps))
 
-reps = { k:v for k,v in reps.items() if int(v) > 0 }
+reps = { k:int(v) for k,v in reps.items() if int(v) > 0 }
 
-for rep in reps.items():
-    print(rep)
+reps_list_sorted = sorted(reps.items(), key = lambda x:x[1], reverse=True)
+
+supply = 133248297 * 10 ** 30
+
+for k, v in reps_list_sorted:
+    perc = v * 100 / supply
+    print(k, '{: >6.3f}'.format(perc), v)
 print(len(reps))
