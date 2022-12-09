@@ -47,7 +47,7 @@ Currently it does the following:
 * git clones the nano-node project and its subprojects
 * builds nano-node, Qt wallet and self test executables
 * optionally downloads a ledger for fast bootstrapping
-* hows how to enable_control for RPCs
+* shows how to enable_control for RPCs
 * integrates with Visual Studio Code (look inside the .vscode folder for settings)
 
 Before building the software, ensure you have these dependencies installed (for ubuntu 20.04):  
