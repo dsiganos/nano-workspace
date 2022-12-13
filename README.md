@@ -171,6 +171,7 @@ The project is also setup to work with vscode. The vscode files are in ".vscode"
 * https://crates.io/crates/feeless (Rust tools and node for Nano)
 * https://nano.community/getting-started-devs/protocol-reference (notes/help about C++ source code)
 * https://beta.nanocrawler.cc
+* http://peers.siganos.xyz
 
 # TODO
 * Learn about the beta network (https://docs.nano.org/running-a-node/beta-network)
