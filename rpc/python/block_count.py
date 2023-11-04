@@ -22,7 +22,7 @@ def parse_args():
                         help='RPC URL to contact')
 
     parser.add_argument('--csv', action='store_true', default=False,
-                        help='sample every 10 seconds and write a CSV data')
+                        help='sample every 10 seconds and write CSV data to stdout')
 
     return parser.parse_args()
 
