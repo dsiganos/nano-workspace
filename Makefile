@@ -50,7 +50,6 @@ build: git.clone.done boost
         -DNANO_STACKTRACE_BACKTRACE=OFF \
         -DNANO_GUI=ON \
         -DNANO_TEST=ON \
-        -DNANO_POW_SERVER=ON \
         -DCMAKE_BUILD_TYPE=Debug \
         ../nano-node
 	cd $(BUILDDIR) && $(MAKE) -j$(PARALLELISM)
