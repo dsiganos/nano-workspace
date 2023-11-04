@@ -31,14 +31,14 @@ git.clone.done:
 	git clone --branch $(NANO_BRANCH) --recursive $(NANO_REPO) nano-node
 	touch $@
 
-ifeq ($(BOOST_ROOT),)
+ifeq ($(BUILD_LOCAL_BOOST),yes)
 BOOST_ROOT := $(CURDIR)/boost/boost
 export BOOST_ROOT
 boost:
 	$(MAKE) -C boost
 else
 boost:
-	echo "Not building local boost library, using $(BOOST_ROOT)"
+	echo "Not building local boost library, set BUILD_LOCAL_BOOST=yes if you want to build versions older than V25"
 endif
 
 # build the nano node
