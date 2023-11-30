@@ -17,6 +17,9 @@ PARALLELISM := $(shell nproc --ignore 1)
 endif
 export PARALLELISM
 
+#CMAKE_GENERATOR := "Unix Makefiles"
+CMAKE_GENERATOR := "Ninja"
+
 NANO_REPO   := https://github.com/nanocurrency/nano-node.git
 NANO_BRANCH := develop
 
@@ -46,13 +49,13 @@ endif
 build: git.clone.done boost
 	mkdir -p $(BUILDDIR) $(DATAPATH)
 	cd $(BUILDDIR) && cmake \
-        -G "Unix Makefiles" \
+        -G $(CMAKE_GENERATOR) \
         -DNANO_STACKTRACE_BACKTRACE=OFF \
         -DNANO_GUI=ON \
         -DNANO_TEST=ON \
         -DCMAKE_BUILD_TYPE=Debug \
         ../nano-node
-	cd $(BUILDDIR) && $(MAKE) -j$(PARALLELISM)
+	cd $(BUILDDIR) && cmake --build . --parallel $(PARALLELISM)
 	#cd $(BUILDDIR) && ./nano_node --diagnostics --data_path ../$(DATAPATH)
 
 # download a copy of the latest ledger and check the hash then inflate it
