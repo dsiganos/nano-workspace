@@ -14,9 +14,12 @@ def parse_address_and_port(address):
     if match:
         # Split the address and port
         address, port = match.groups()
-    elif ':' in address:
+    else:
+        # Use regex to detect an IPv6 address
+        match = re.match(r'([0-9a-fA-F:]+):(\d+)', address)
+        if match:
         # Split the address and port
-        address, port = address.rsplit(':', 1)
+            address, port = match.groups()
     else:
         # Set the port to an empty string
         address, port = address, ''
