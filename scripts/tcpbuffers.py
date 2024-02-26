@@ -2,19 +2,21 @@
 import argparse
 import json
 import logging
+import re
 import subprocess
 
 def parse_address_and_port(address):
     "Parse an address string into an address and port"
     print('address: %s' % address)
 
-    # Check if the address contains a port
-    if '.' in address and ':' in address:
+    # Use regex to detect an IPv4 address
+    match = re.match(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[.:](\d+)', address)
+    if match:
+        # Split the address and port
+        address, port = match.groups()
+    elif ':' in address:
         # Split the address and port
         address, port = address.rsplit(':', 1)
-    elif '.' in address:
-        # Split the address and port
-        address, port = address.rsplit('.', 1)
     else:
         # Set the port to an empty string
         address, port = address, ''
