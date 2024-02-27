@@ -52,13 +52,14 @@ def produce_csv_values(session, rpc_url):
 
 def single_block_count(session, rpc_url):
     result, count, unchecked, cemented = get_block_count(session, rpc_url)
+    uncemented = count - cemented
+    total = count + unchecked
     print(json.dumps(result, indent=4))
-    print('count:      {:>15,}'.format(count))
-    print('unchecked:  {:>15,}'.format(unchecked))
-    print('cemented:   {:>15,}'.format(cemented))
-    print('uncemented: {:>15,}'.format(count - cemented))
-    print('total:      {:>15,}'.format(count + unchecked))
-
+    print(f'count:      {count:>15,}')
+    print(f'unchecked:  {unchecked:>15,}')
+    print(f'cemented:   {cemented:>15,}')
+    print(f'uncemented: {uncemented:>15,}')
+    print(f'total:      {total:>15,}')
 
 args = parse_args()
 
